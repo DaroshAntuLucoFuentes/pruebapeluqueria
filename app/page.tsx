@@ -124,7 +124,7 @@ export default function Home() {
                 <div className="bg-white/5 backdrop-blur-xl p-10 rounded-xl border border-white/5">
                   <span className="material-symbols-outlined text-secondary text-4xl mb-6">format_quote</span>
                   <p className="text-xl font-headline text-white/90 italic mb-8 leading-relaxed">
-                    "La precisión en la técnica de corte aquí no se parece a nada que haya experimentado. No es solo un corte, es arquitectura para el rostro."
+                    &quot;La precisión en la técnica de corte aquí no se parece a nada que haya experimentado. No es solo un corte, es arquitectura para el rostro.&quot;
                   </p>
                   <div>
                     <h4 className="text-white font-label tracking-widest uppercase text-sm">Elena Vance</h4>
@@ -134,7 +134,7 @@ export default function Home() {
                 <div className="bg-white/5 backdrop-blur-xl p-10 rounded-xl border border-white/5 mt-0 md:mt-12">
                   <span className="material-symbols-outlined text-secondary text-4xl mb-6">format_quote</span>
                   <p className="text-xl font-headline text-white/90 italic mb-8 leading-relaxed">
-                    "Entendieron mi visión perfectamente. La transición de los tonos carbón al oro suave se ejecutó con una delicadeza artística increíble."
+                    &quot;Entendieron mi visión perfectamente. La transición de los tonos carbón al oro suave se ejecutó con una delicadeza artística increíble.&quot;
                   </p>
                   <div>
                     <h4 className="text-white font-label tracking-widest uppercase text-sm">Julian Rossi</h4>

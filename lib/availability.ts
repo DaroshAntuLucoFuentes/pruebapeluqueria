@@ -64,7 +64,7 @@ export async function getAvailableSlots(
   const { date, serviceDuration } = params
 
   const dayOfWeek = getDayOfWeek(date)
-  const workingHours = businessConfig.workingHours[dayOfWeek]
+  const workingHours = businessConfig.workingHours[dayOfWeek as keyof typeof businessConfig.workingHours]
 
   if (!workingHours) {
     return []
@@ -119,7 +119,7 @@ export async function isSlotStillAvailable(
   const { date, time, serviceDuration } = params
 
   const dayOfWeek = getDayOfWeek(date)
-  const workingHours = businessConfig.workingHours[dayOfWeek]
+  const workingHours = businessConfig.workingHours[dayOfWeek as keyof typeof businessConfig.workingHours]
 
   if (!workingHours) {
     return false
@@ -139,12 +139,13 @@ export async function isSlotStillAvailable(
 
 export function getWorkingHoursForDate(date: Date): [string, string] | null {
   const dayOfWeek = getDayOfWeek(date)
-  return businessConfig.workingHours[dayOfWeek] || null
+  const hours = businessConfig.workingHours[dayOfWeek as keyof typeof businessConfig.workingHours]
+  return hours ? [hours[0], hours[1]] : null
 }
 
 export function isWorkingDay(date: Date): boolean {
   const dayOfWeek = getDayOfWeek(date)
-  return !!businessConfig.workingHours[dayOfWeek]
+  return !!businessConfig.workingHours[dayOfWeek as keyof typeof businessConfig.workingHours]
 }
 
 export function getServiceByName(serviceName: string) {
