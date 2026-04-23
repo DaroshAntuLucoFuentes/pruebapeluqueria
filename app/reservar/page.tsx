@@ -124,139 +124,253 @@ export default function ReservarPage() {
   }
 
   return (
-    <div className="container">
-      <div className="booking-container">
+    <div style={{ minHeight: '100vh', backgroundColor: '#0a0a0a', paddingTop: '6rem', paddingBottom: '4rem' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
         <div style={{ marginBottom: '2rem', textAlign: 'center' }}>
-          <Link href="/" style={{ color: '#3498db', textDecoration: 'underline' }}>
+          <Link href="/" style={{ color: '#d4af37', textDecoration: 'none', fontSize: '1.1rem', fontWeight: 'bold', transition: 'opacity 0.3s' }}>
             ← Volver al inicio
           </Link>
         </div>
 
-        <h2 className="title">Reserva tu Cita</h2>
+        <div style={{ backgroundColor: '#1a1a1a', borderRadius: '12px', padding: '2.5rem', border: '2px solid #d4af37' }}>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: '#d4af37', textAlign: 'center', fontWeight: 'bold' }}>
+            Reserva tu Cita
+          </h2>
 
-        {bookingSuccess && (
-          <div className="success-message">
-            ¡Reserva confirmada! Recibirás un correo de confirmación.
-          </div>
-        )}
-
-        {error && (
-          <div className="error-message">
-            {error}
-          </div>
-        )}
-
-        <div className="form-section">
-          <h3 className="section-title">1. Selecciona el Servicio</h3>
-          <select
-            className="input"
-            value={selectedService}
-            onChange={(e) => {
-              setSelectedService(e.target.value)
-              setAvailableSlots([])
-              setSelectedSlot('')
-              setError('')
-            }}
-            disabled={loading}
-          >
-            <option value="">-- Selecciona un servicio --</option>
-            {businessConfig.services.map((service) => (
-              <option key={service.name} value={service.name}>
-                {service.name} ({service.duration} min)
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="form-section">
-          <h3 className="section-title">2. Selecciona la Fecha</h3>
-          <input
-            type="date"
-            className="input"
-            value={selectedDate}
-            onChange={(e) => {
-              setSelectedDate(e.target.value)
-              setAvailableSlots([])
-              setSelectedSlot('')
-              setError('')
-            }}
-            min={getTodayDate()}
-            max={getMaxDate()}
-            disabled={loading}
-          />
-        </div>
-
-        <button
-          className="button button-primary"
-          onClick={handleCheckAvailability}
-          disabled={loading || !selectedService || !selectedDate}
-        >
-          {loading ? 'Consultando...' : 'Consultar Disponibilidad'}
-        </button>
-
-        {availableSlots.length > 0 && (
-          <>
-            <div className="form-section">
-              <h3 className="section-title">3. Selecciona un Horario</h3>
-              <div className="slots-grid">
-                {availableSlots.map((slot) => (
-                  <button
-                    key={slot}
-                    className={`slot-button ${selectedSlot === slot ? 'selected' : ''}`}
-                    onClick={() => setSelectedSlot(slot)}
-                    disabled={loading}
-                  >
-                    {slot}
-                  </button>
-                ))}
-              </div>
+          {bookingSuccess && (
+            <div style={{ background: 'linear-gradient(135deg, #d4af37 0%, #b8941f 100%)', color: '#000', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem', textAlign: 'center', fontWeight: 'bold', fontSize: '1.1rem' }}>
+              ¡Reserva confirmada! Recibirás un correo de confirmación.
             </div>
+          )}
 
-            {selectedSlot && (
-              <div className="form-section">
-                <h3 className="section-title">4. Completa tus Datos</h3>
-                <div className="form-group">
-                  <label className="label">Nombre completo</label>
-                  <input
-                    type="text"
-                    className="input"
-                    value={customerName}
-                    onChange={(e) => setCustomerName(e.target.value)}
-                    placeholder="Tu nombre"
-                    disabled={loading}
-                  />
+          {error && (
+            <div style={{ background: '#ff6b35', color: '#fff', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem', textAlign: 'center', fontWeight: 'bold' }}>
+              {error}
+            </div>
+          )}
+
+          <div style={{ marginBottom: '2rem' }}>
+            <h3 style={{ color: '#d4af37', fontSize: '1.3rem', marginBottom: '1rem', fontWeight: 'bold' }}>
+              1. Selecciona el Servicio
+            </h3>
+            <select
+              style={{ 
+                width: '100%', 
+                padding: '1rem', 
+                fontSize: '1rem', 
+                backgroundColor: '#0a0a0a', 
+                color: '#fff', 
+                border: '2px solid #d4af37', 
+                borderRadius: '8px',
+                cursor: 'pointer',
+                outline: 'none'
+              }}
+              value={selectedService}
+              onChange={(e) => {
+                setSelectedService(e.target.value)
+                setAvailableSlots([])
+                setSelectedSlot('')
+                setError('')
+              }}
+              disabled={loading}
+            >
+              <option value="" style={{ backgroundColor: '#0a0a0a', color: '#fff' }}>-- Selecciona un servicio --</option>
+              {businessConfig.services.map((service) => (
+                <option key={service.name} value={service.name} style={{ backgroundColor: '#0a0a0a', color: '#fff' }}>
+                  {service.name} ({service.duration} min)
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div style={{ marginBottom: '2rem' }}>
+            <h3 style={{ color: '#d4af37', fontSize: '1.3rem', marginBottom: '1rem', fontWeight: 'bold' }}>
+              2. Selecciona la Fecha
+            </h3>
+            <input
+              type="date"
+              style={{ 
+                width: '100%', 
+                padding: '1rem', 
+                fontSize: '1rem', 
+                backgroundColor: '#0a0a0a', 
+                color: '#fff', 
+                border: '2px solid #d4af37', 
+                borderRadius: '8px',
+                outline: 'none',
+                colorScheme: 'dark'
+              }}
+              value={selectedDate}
+              onChange={(e) => {
+                setSelectedDate(e.target.value)
+                setAvailableSlots([])
+                setSelectedSlot('')
+                setError('')
+              }}
+              min={getTodayDate()}
+              max={getMaxDate()}
+              disabled={loading}
+            />
+          </div>
+
+          <button
+            style={{ 
+              width: '100%', 
+              padding: '1rem', 
+              fontSize: '1rem', 
+              fontWeight: 'bold', 
+              backgroundColor: loading || !selectedService || !selectedDate ? '#666' : '#d4af37', 
+              color: '#000', 
+              border: 'none', 
+              borderRadius: '8px', 
+              cursor: loading || !selectedService || !selectedDate ? 'not-allowed' : 'pointer',
+              transition: 'all 0.3s',
+              textTransform: 'uppercase',
+              letterSpacing: '1px',
+              marginBottom: '2rem'
+            }}
+            onClick={handleCheckAvailability}
+            disabled={loading || !selectedService || !selectedDate}
+          >
+            {loading ? 'Consultando...' : 'Consultar Disponibilidad'}
+          </button>
+
+          {availableSlots.length > 0 && (
+            <>
+              <div style={{ marginBottom: '2rem' }}>
+                <h3 style={{ color: '#d4af37', fontSize: '1.3rem', marginBottom: '1rem', fontWeight: 'bold' }}>
+                  3. Selecciona un Horario
+                </h3>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))', gap: '0.75rem' }}>
+                  {availableSlots.map((slot) => (
+                    <button
+                      key={slot}
+                      style={{ 
+                        padding: '0.75rem', 
+                        fontSize: '1rem', 
+                        fontWeight: '600', 
+                        backgroundColor: selectedSlot === slot ? '#d4af37' : '#0a0a0a', 
+                        color: selectedSlot === slot ? '#000' : '#fff', 
+                        border: `2px solid ${selectedSlot === slot ? '#d4af37' : '#666'}`, 
+                        borderRadius: '8px', 
+                        cursor: 'pointer',
+                        transition: 'all 0.2s'
+                      }}
+                      onClick={() => setSelectedSlot(slot)}
+                      disabled={loading}
+                      onMouseEnter={(e) => {
+                        if (selectedSlot !== slot) {
+                          e.currentTarget.style.borderColor = '#d4af37'
+                          e.currentTarget.style.backgroundColor = '#1a1a1a'
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (selectedSlot !== slot) {
+                          e.currentTarget.style.borderColor = '#666'
+                          e.currentTarget.style.backgroundColor = '#0a0a0a'
+                        }
+                      }}
+                    >
+                      {slot}
+                    </button>
+                  ))}
                 </div>
-
-                <div className="form-group">
-                  <label className="label">Teléfono</label>
-                  <input
-                    type="tel"
-                    className="input"
-                    value={customerPhone}
-                    onChange={(e) => setCustomerPhone(e.target.value)}
-                    placeholder="+56 9 1234 5678"
-                    disabled={loading}
-                  />
-                </div>
-
-                <div className="booking-summary">
-                  <h4>Resumen de tu Reserva</h4>
-                  <p><strong>Servicio:</strong> {selectedService}</p>
-                  <p><strong>Fecha:</strong> {formatDateForDisplay(selectedDate)}</p>
-                  <p><strong>Hora:</strong> {selectedSlot}</p>
-                </div>
-
-                <button
-                  className="button button-success"
-                  onClick={handleBookAppointment}
-                  disabled={loading || !customerName.trim() || !customerPhone.trim()}
-                >
-                  {loading ? 'Confirmando...' : 'Confirmar Reserva'}
-                </button>
               </div>
-            )}
-          </>
-        )}
+
+              {selectedSlot && (
+                <div>
+                  <h3 style={{ color: '#d4af37', fontSize: '1.3rem', marginBottom: '1rem', fontWeight: 'bold' }}>
+                    4. Completa tus Datos
+                  </h3>
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', color: '#d4af37', fontWeight: '600' }}>
+                      Nombre completo
+                    </label>
+                    <input
+                      type="text"
+                      style={{ 
+                        width: '100%', 
+                        padding: '1rem', 
+                        fontSize: '1rem', 
+                        backgroundColor: '#0a0a0a', 
+                        color: '#fff', 
+                        border: '2px solid #d4af37', 
+                        borderRadius: '8px',
+                        outline: 'none'
+                      }}
+                      value={customerName}
+                      onChange={(e) => setCustomerName(e.target.value)}
+                      placeholder="Tu nombre"
+                      disabled={loading}
+                    />
+                  </div>
+
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', color: '#d4af37', fontWeight: '600' }}>
+                      Teléfono
+                    </label>
+                    <input
+                      type="tel"
+                      style={{ 
+                        width: '100%', 
+                        padding: '1rem', 
+                        fontSize: '1rem', 
+                        backgroundColor: '#0a0a0a', 
+                        color: '#fff', 
+                        border: '2px solid #d4af37', 
+                        borderRadius: '8px',
+                        outline: 'none'
+                      }}
+                      value={customerPhone}
+                      onChange={(e) => setCustomerPhone(e.target.value)}
+                      placeholder="+56 9 1234 5678"
+                      disabled={loading}
+                    />
+                  </div>
+
+                  <div style={{ backgroundColor: '#0a0a0a', border: '2px solid #d4af37', padding: '1.5rem', borderRadius: '8px', marginBottom: '1.5rem' }}>
+                    <h4 style={{ color: '#d4af37', marginBottom: '1rem', fontSize: '1.2rem', fontWeight: 'bold' }}>
+                      Resumen de tu Reserva
+                    </h4>
+                    <p style={{ color: '#fff', marginBottom: '0.5rem', lineHeight: '1.8' }}>
+                      <strong style={{ color: '#d4af37' }}>Servicio:</strong> {selectedService}
+                    </p>
+                    <p style={{ color: '#fff', marginBottom: '0.5rem', lineHeight: '1.8' }}>
+                      <strong style={{ color: '#d4af37' }}>Fecha:</strong> {formatDateForDisplay(selectedDate)}
+                    </p>
+                    <p style={{ color: '#fff', marginBottom: '0', lineHeight: '1.8' }}>
+                      <strong style={{ color: '#d4af37' }}>Hora:</strong> {selectedSlot}
+                    </p>
+                  </div>
+
+                  <button
+                    style={{ 
+                      width: '100%', 
+                      padding: '1.25rem', 
+                      fontSize: '1.1rem', 
+                      fontWeight: 'bold', 
+                      background: loading || !customerName.trim() || !customerPhone.trim() 
+                        ? '#666' 
+                        : 'linear-gradient(135deg, #d4af37 0%, #ff8c42 100%)', 
+                      color: '#000', 
+                      border: 'none', 
+                      borderRadius: '8px', 
+                      cursor: loading || !customerName.trim() || !customerPhone.trim() ? 'not-allowed' : 'pointer',
+                      transition: 'all 0.3s',
+                      textTransform: 'uppercase',
+                      letterSpacing: '1px',
+                      boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)'
+                    }}
+                    onClick={handleBookAppointment}
+                    disabled={loading || !customerName.trim() || !customerPhone.trim()}
+                  >
+                    {loading ? 'Confirmando...' : 'Confirmar Reserva'}
+                  </button>
+                </div>
+              )}
+            </>
+          )}
+        </div>
       </div>
     </div>
   )
