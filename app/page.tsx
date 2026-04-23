@@ -1,19 +1,24 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   return (
     <>
 
-      <header className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md fixed top-0 w-full z-50 shadow-[0px_20px_40px_rgba(26,28,28,0.04)]">
-        <nav className="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
-          <div className="text-2xl font-serif tracking-tighter text-zinc-900 dark:text-zinc-50 uppercase">The Editorial Atelier</div>
-          <div className="hidden md:flex items-center space-x-12">
-            <a className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors font-manrope text-sm tracking-widest uppercase" href="#services">Servicios</a>
-            <a className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors font-manrope text-sm tracking-widest uppercase" href="#portfolio">Portafolio</a>
-            <a className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors font-manrope text-sm tracking-widest uppercase" href="#atelier">Atelier</a>
-            <a className="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors font-manrope text-sm tracking-widest uppercase" href="#contact">Contacto</a>
+      <header className="bg-black/90 backdrop-blur-md fixed top-0 w-full z-50 shadow-[0px_4px_20px_rgba(212,175,55,0.1)] border-b border-secondary/20">
+        <nav className="flex justify-between items-center px-8 py-3 max-w-7xl mx-auto">
+          <div className="flex items-center gap-3">
+            <Image src="/images/logo.png" alt="PeluRock Nata Leal" width={60} height={60} className="object-contain" />
+            <span className="text-xl font-bold tracking-tight text-secondary uppercase hidden sm:block">PeluRock</span>
+          </div>
+          <div className="hidden md:flex items-center space-x-8">
+            <a className="text-zinc-300 hover:text-secondary transition-colors font-bold text-sm tracking-wide uppercase" href="#servicios">Servicios</a>
+            <a className="text-zinc-300 hover:text-secondary transition-colors font-bold text-sm tracking-wide uppercase" href="#trabajo">Nuestro Trabajo</a>
+            <a className="text-zinc-300 hover:text-secondary transition-colors font-bold text-sm tracking-wide uppercase" href="#transformacion">Nosotros</a>
+            <a className="text-zinc-300 hover:text-secondary transition-colors font-bold text-sm tracking-wide uppercase" href="#cursos">Cursos</a>
+            <a className="text-zinc-300 hover:text-secondary transition-colors font-bold text-sm tracking-wide uppercase" href="#contacto">Contacto</a>
           </div>
           <Link href="/reservar">
             <button className="bg-secondary text-on-secondary px-6 py-3 text-sm font-label tracking-widest uppercase rounded-lg hover:opacity-80 transition-opacity duration-600 scale-98">
@@ -23,203 +28,361 @@ export default function Home() {
         </nav>
       </header>
 
-      <main className="pt-24">
-        <section className="relative min-h-[921px] flex items-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <img className="w-full h-full object-cover" alt="Cinematic wide shot of a luxury minimalist hair salon interior with high ceilings, warm golden lighting, and architectural grey stone walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGtDZvyUrNMmLRbuj3Mv0OaO_LHhvA5SHqScnFjEkOvR7GXbx_22TV2CJ6Q7gmEJAIBb9-NtiaMt5hLtyh6zUQ9jBJGKXu4TZHzl0DMpEuJHyeO7ANfHjv2Euiq94VAuiHB57nleSeWuKg2TGYRcLXStwzRCsosELsSBXGiXxmffR7xg7UY55JaatInVfXujcnOLhxnLc1QcCFyncxQ_DjTVePNEDQC1pU18tiAsyTWrtuFxMjpDtC6iZVWzM46ryJ7S9jg00eyL3p"/>
-            <div className="absolute inset-0 bg-primary/40 backdrop-grayscale-[0.2]"></div>
+      <main className="pt-20">
+        <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-zinc-900 to-black">
+          <div className="absolute inset-0 z-0 opacity-20">
+            <div className="absolute top-20 left-20 w-96 h-96 bg-secondary/30 rounded-full blur-[100px]"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-tertiary/20 rounded-full blur-[100px]"></div>
           </div>
-          <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
-            <div className="max-w-3xl">
-              <span className="text-secondary-fixed font-label tracking-[0.3em] uppercase mb-6 block">Establecido en 2024</span>
-              <h1 className="text-6xl md:text-8xl font-headline text-white leading-[1.1] mb-8 tracking-tighter">
-                Esculpiendo <span className="italic font-normal">la</span> Identidad del Cabello Moderno.
-              </h1>
-              <p className="text-white/80 font-body text-xl md:text-2xl mb-12 leading-relaxed max-w-xl">
-                Una experiencia curada donde la precisión arquitectónica se encuentra con el arte fluido del estilo editorial.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Link href="/reservar">
-                  <button className="bg-secondary text-on-secondary px-10 py-5 text-sm font-label tracking-widest uppercase rounded-md hover:bg-secondary/90 transition-all duration-600">
-                    Reservar
-                  </button>
-                </Link>
-                <button className="group flex items-center gap-4 text-white font-label tracking-widest uppercase py-5 px-6">
-                  Ver Lookbook
-                  <span className="h-[1px] w-12 bg-secondary group-hover:w-16 transition-all duration-600"></span>
-                </button>
+          <div className="relative z-10 max-w-7xl mx-auto px-8 w-full py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="text-secondary font-bold tracking-[0.3em] uppercase mb-6 block text-sm">Portal San Pedro, San Pedro de La Paz</span>
+                <h1 className="text-6xl md:text-8xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
+                  PeluRock <span className="text-secondary">Nata Leal</span>
+                </h1>
+                <p className="text-2xl md:text-3xl font-bold text-secondary mb-6 tracking-wide">
+                  Peluquería y Spa Canino con actitud rockera
+                </p>
+                <p className="text-white/80 font-body text-xl md:text-2xl mb-8 leading-relaxed max-w-2xl">
+                  De <span className="text-secondary font-bold">Peludogs Móvil</span> nos transformamos en <span className="text-secondary font-bold">PeluRock</span>: misma dedicación, ahora en un espacio fijo para atender mejor a tu peludito.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <Link href="/reservar">
+                    <button className="bg-secondary text-black px-10 py-5 text-sm font-bold tracking-widest uppercase rounded-md hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/20">
+                      Reservar
+                    </button>
+                  </Link>
+                  <a href="https://wa.me/56935884173" target="_blank" rel="noopener noreferrer">
+                    <button className="group flex items-center gap-4 text-white font-bold tracking-widest uppercase py-5 px-8 border-2 border-secondary hover:bg-secondary/10 transition-all duration-300 rounded-md">
+                      WhatsApp
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div className="flex justify-center lg:justify-end">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-secondary/30 rounded-full blur-[80px]"></div>
+                  <Image 
+                    src="/images/logo.png" 
+                    alt="PeluRock Nata Leal Logo" 
+                    width={500} 
+                    height={500} 
+                    className="relative z-10 drop-shadow-2xl"
+                  />
+                </div>
               </div>
             </div>
           </div>
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#servicios" className="text-secondary text-4xl">↓</a>
+          </div>
         </section>
 
-        <section className="py-32 bg-surface" id="services">
+        <section className="py-24 bg-gradient-to-b from-black to-zinc-900" id="servicios">
           <div className="max-w-7xl mx-auto px-8">
-            <div className="mb-24">
-              <h2 className="text-4xl md:text-6xl font-headline text-primary mb-6">Menú de Servicios</h2>
-              <div className="h-1 w-24 bg-secondary"></div>
+            <div className="mb-20 text-center">
+              <span className="text-secondary font-bold tracking-[0.3em] uppercase mb-4 block text-sm">Nuestros Servicios</span>
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Menú Rock</h2>
+              <div className="h-1 w-32 bg-secondary mx-auto"></div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-              <div className="md:col-span-7 bg-surface-container-lowest p-12 flex flex-col justify-between group cursor-pointer border-none shadow-[0px_20px_40px_rgba(26,28,28,0.02)] transition-all duration-600 hover:bg-secondary-container/10">
-                <div>
-                  <span className="text-secondary font-label tracking-widest uppercase block mb-4">Precisión</span>
-                  <h3 className="text-4xl font-headline mb-8">Corte Editorial &amp; Acabado</h3>
-                  <p className="text-on-surface-variant font-body leading-relaxed mb-12 max-w-md">
-                    Un corte arquitectónico a medida diseñado para realzar sus facciones únicas, seguido de un acabado editorial profesional.
-                  </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl hover:border-secondary transition-all duration-300 group cursor-pointer hover:shadow-xl hover:shadow-secondary/20">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold text-secondary">Rock Soft</h3>
                 </div>
-                <div className="flex justify-between items-end">
-                  <span className="text-2xl font-headline italic">desde $145</span>
-                  <span className="material-symbols-outlined text-4xl text-secondary">arrow_outward</span>
-                </div>
-              </div>
-
-              <div className="md:col-span-5 bg-primary p-12 text-white flex flex-col justify-between relative overflow-hidden group">
-                <div className="relative z-10">
-                  <span className="text-secondary-fixed font-label tracking-widest uppercase block mb-4">Luminosidad</span>
-                  <h3 className="text-3xl font-headline mb-4">Balayage de Firma</h3>
-                  <p className="text-white/60 font-body leading-relaxed mb-8">
-                    Dimensiones pintadas a mano que imitan el cabello natural aclarado por el sol.
-                  </p>
-                  <span className="text-xl font-headline italic">desde $280</span>
-                </div>
-                <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-1/4 translate-y-1/4 group-hover:scale-110 transition-transform duration-700">
-                  <span className="material-symbols-outlined text-[15rem]">palette</span>
-                </div>
-              </div>
-
-              <div className="md:col-span-4 bg-surface-container-low p-10 hover:bg-surface-container-high transition-colors duration-500">
-                <h3 className="text-2xl font-headline mb-4">Peinado</h3>
-                <p className="text-sm font-body text-on-surface-variant mb-6">Eventos formales, sesiones de fotos o estilo chic casual.</p>
-                <span className="text-lg font-headline italic text-secondary">$95+</span>
-              </div>
-              <div className="md:col-span-4 bg-surface-container-low p-10 hover:bg-surface-container-high transition-colors duration-500">
-                <h3 className="text-2xl font-headline mb-4">Brillo Tonal</h3>
-                <p className="text-sm font-body text-on-surface-variant mb-6">Restaurando la vitalidad y profundidad con pigmentos de alto brillo.</p>
-                <span className="text-lg font-headline italic text-secondary">$110+</span>
-              </div>
-              <div className="md:col-span-4 bg-surface-container-low p-10 hover:bg-surface-container-high transition-colors duration-500">
-                <h3 className="text-2xl font-headline mb-4">Cuidado Molecular</h3>
-                <p className="text-sm font-body text-on-surface-variant mb-6">Tratamientos de lujo para fortalecer los puentes internos del cabello.</p>
-                <span className="text-lg font-headline italic text-secondary">$65+</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-32 relative bg-primary overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px]"></div>
-            <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-tertiary/10 rounded-full blur-[100px]"></div>
-          </div>
-          <div className="max-w-7xl mx-auto px-8 relative z-10">
-            <div className="flex flex-col md:flex-row gap-16 items-center">
-              <div className="w-full md:w-1/3">
-                <h2 className="text-4xl md:text-5xl font-headline text-white mb-8">Voces del <span className="italic">Atelier</span></h2>
-                <p className="text-white/60 font-body leading-relaxed">
-                  Nuestros clientes son nuestros mejores colaboradores. Descubra las experiencias que definen nuestra búsqueda de la excelencia.
+                <p className="text-white/80 leading-relaxed mb-6">
+                  Baño, secado y corte funcional de fácil mantención. Corte parejo con numeración corta hasta 9mm. Ideal para mantener a tu peludito limpio y ordenado.
                 </p>
               </div>
-              <div className="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white/5 backdrop-blur-xl p-10 rounded-xl border border-white/5">
-                  <span className="material-symbols-outlined text-secondary text-4xl mb-6">format_quote</span>
-                  <p className="text-xl font-headline text-white/90 italic mb-8 leading-relaxed">
-                    &quot;La precisión en la técnica de corte aquí no se parece a nada que haya experimentado. No es solo un corte, es arquitectura para el rostro.&quot;
-                  </p>
-                  <div>
-                    <h4 className="text-white font-label tracking-widest uppercase text-sm">Elena Vance</h4>
-                    <span className="text-secondary-fixed text-xs font-body uppercase tracking-widest">Creativa de Moda</span>
-                  </div>
+
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl hover:border-secondary transition-all duration-300 group cursor-pointer hover:shadow-xl hover:shadow-secondary/20">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold text-secondary">Rock Cut</h3>
                 </div>
-                <div className="bg-white/5 backdrop-blur-xl p-10 rounded-xl border border-white/5 mt-0 md:mt-12">
-                  <span className="material-symbols-outlined text-secondary text-4xl mb-6">format_quote</span>
-                  <p className="text-xl font-headline text-white/90 italic mb-8 leading-relaxed">
-                    &quot;Entendieron mi visión perfectamente. La transición de los tonos carbón al oro suave se ejecutó con una delicadeza artística increíble.&quot;
-                  </p>
-                  <div>
-                    <h4 className="text-white font-label tracking-widest uppercase text-sm">Julian Rossi</h4>
-                    <span className="text-secondary-fixed text-xs font-body uppercase tracking-widest">Director</span>
-                  </div>
+                <p className="text-white/80 leading-relaxed mb-6">
+                  Corte de raza o fantasía + baño completo. Corte sofisticado para un look con estilo y personalidad.
+                </p>
+              </div>
+
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl hover:border-secondary transition-all duration-300 group cursor-pointer hover:shadow-xl hover:shadow-secondary/20">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold text-secondary">Rock Bath</h3>
                 </div>
+                <p className="text-white/80 leading-relaxed mb-6">
+                  Baño, secado y perfume. Limpieza completa para dejar a tu peludo fresco y brillante.
+                </p>
+              </div>
+
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl hover:border-secondary transition-all duration-300 group cursor-pointer hover:shadow-xl hover:shadow-secondary/20">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold text-secondary">Rock Fresh</h3>
+                </div>
+                <p className="text-white/80 leading-relaxed mb-6">
+                  Baño, secado, retoques de corte y detalles. Perfecto para la mantención mensual.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-secondary/20 to-tertiary/20 border-2 border-secondary p-8 rounded-xl hover:border-tertiary transition-all duration-300 group cursor-pointer shadow-lg shadow-secondary/30">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold text-secondary">Rock Turbo</h3>
+                </div>
+                <p className="text-white leading-relaxed mb-6 font-semibold">
+                  Experiencia premium: baño, corte, mascarillas, masajes y más. Para un pelaje sano, brillante y full actitud.
+                </p>
+              </div>
+
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl hover:border-secondary transition-all duration-300 group cursor-pointer hover:shadow-xl hover:shadow-secondary/20">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold text-secondary">Rock Smile</h3>
+                </div>
+                <p className="text-white/80 leading-relaxed mb-6">
+                  Baño, secado y corte + cepillado dental + detalle especial + regalito sorpresa. Para un aliento fresco y una sonrisa rockera.
+                </p>
+              </div>
+
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl hover:border-secondary transition-all duration-300 group cursor-pointer hover:shadow-xl hover:shadow-secondary/20">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold text-secondary">Rock Zen</h3>
+                </div>
+                <p className="text-white/80 leading-relaxed mb-6">
+                  Corte + baño relajante + masajes + aromaterapia + flores de Bach. Un momento de calma y bienestar para tu peludo.
+                </p>
+              </div>
+
+            </div>
+
+            <div className="mt-16 bg-gradient-to-r from-zinc-900 to-black border-2 border-secondary/40 p-10 rounded-xl">
+              <h3 className="text-3xl font-bold text-secondary mb-6 text-center">Servicios Adicionales</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+                <div className="text-white/90 font-semibold">Cortes de raza o fantasía</div>
+                <div className="text-white/90 font-semibold">Deslanados</div>
+                <div className="text-white/90 font-semibold">Stripping</div>
+                <div className="text-white/90 font-semibold">Recuperación de manto</div>
+                <div className="text-white/90 font-semibold">Baños medicados</div>
+                <div className="text-white/90 font-semibold">Mantención</div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-32 bg-surface">
-          <div className="max-w-4xl mx-auto px-8">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl font-headline mb-4">Preguntas Frecuentes</h2>
-              <p className="text-on-surface-variant font-label tracking-widest uppercase text-sm">Protocolos del Atelier</p>
-            </div>
-            <div className="space-y-4">
-              <details className="group bg-surface-container-lowest overflow-hidden transition-all duration-500">
-                <summary className="flex justify-between items-center p-8 cursor-pointer list-none">
-                  <span className="text-lg font-headline">¿Cuál es su política de cancelación?</span>
-                  <span className="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
-                </summary>
-                <div className="px-8 pb-8 text-on-surface-variant font-body leading-relaxed">
-                  Solicitamos un aviso de 48 horas para cualquier cancelación. Las cancelaciones dentro de las 24 horas incurrirán en un cargo del 50% del servicio para respetar el tiempo dedicado de nuestros estilistas.
-                </div>
-              </details>
-              <details className="group bg-surface-container-lowest overflow-hidden transition-all duration-500">
-                <summary className="flex justify-between items-center p-8 cursor-pointer list-none">
-                  <span className="text-lg font-headline">¿Ofrecen consultas de cortesía?</span>
-                  <span className="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
-                </summary>
-                <div className="px-8 pb-8 text-on-surface-variant font-body leading-relaxed">
-                  Absolutamente. Creemos que cada transformación comienza con un diálogo. Hay consultas de cortesía de 15 minutos disponibles para todos los nuevos clientes.
-                </div>
-              </details>
-              <details className="group bg-surface-container-lowest overflow-hidden transition-all duration-500">
-                <summary className="flex justify-between items-center p-8 cursor-pointer list-none">
-                  <span className="text-lg font-headline">¿Cómo debo prepararme para mi cita de color?</span>
-                  <span className="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
-                </summary>
-                <div className="px-8 pb-8 text-on-surface-variant font-body leading-relaxed">
-                  Recomendamos llegar con el cabello limpio y seco. Evite el uso de sprays o ceras para retoque de raíces 24 horas antes de su visita.
-                </div>
-              </details>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-32 bg-white" id="contact">
+        <section className="py-24 bg-black" id="trabajo">
           <div className="max-w-7xl mx-auto px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-              <div>
-                <h2 className="text-5xl font-headline mb-12">Encuentre <span className="italic text-secondary">el</span> Atelier</h2>
-                <div className="space-y-12">
-                  <div className="flex gap-6">
-                    <span className="material-symbols-outlined text-secondary">location_on</span>
-                    <div>
-                      <h4 className="font-label tracking-widest uppercase text-xs mb-2">Dirección</h4>
-                      <p className="text-xl font-headline">42 Vellum Avenue, Design District<br/>Nueva York, NY 10012</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-6">
-                    <span className="material-symbols-outlined text-secondary">schedule</span>
-                    <div>
-                      <h4 className="font-label tracking-widest uppercase text-xs mb-2">Horarios</h4>
-                      <p className="text-lg font-body">Mar — Vie: 10:00 — 20:00</p>
-                      <p className="text-lg font-body">Sáb: 09:00 — 18:00</p>
-                      <p className="text-on-surface-variant text-sm mt-1 italic">Dom — Lun: Días de descanso</p>
-                    </div>
-                  </div>
-                </div>
+            <div className="mb-20 text-center">
+              <span className="text-secondary font-bold tracking-[0.3em] uppercase mb-4 block text-sm">Resultados Reales</span>
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Nuestro Trabajo</h2>
+              <div className="h-1 w-32 bg-secondary mx-auto mb-6"></div>
+              <p className="text-white/70 text-xl max-w-2xl mx-auto">
+                Cada peludito es único y merece un cuidado especial. Mira algunos de nuestros trabajos recientes.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/dog-1.png" 
+                  alt="Trabajo PeluRock" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
               </div>
-              <div className="rounded-xl overflow-hidden h-96 shadow-inner grayscale hover:grayscale-0 transition-all duration-700">
-                <img className="w-full h-full object-cover" alt="Minimalist abstract map of a city center with thin lines and soft neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-E7djuOXW461nSyUHmcJu1TpsPmNlw17vq0YzOpKhvhipNyzt68cN0SQIR4OGtA68smql5pc35eVpxqguGkz55eSnTEU3gWQCMdYS0VZuzlQL7rvlRnc5LMjbVhJLL28-V1sGDvDdGoTHof0y9xeIFlzdJ3L93PrMI5Hj7fxbwDB6_0dtsTgO2fJM4a6dHDeiODs6Ay5-zdMMUlikY9nsR7a7I8ByymOfUa0SI47PRrhv9k71xYBlfgNcJU1qMS77Grp1gU5HmYRL"/>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/dog-2.png" 
+                  alt="Trabajo PeluRock" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/dog-3.png" 
+                  alt="Trabajo PeluRock" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/dog-4.png" 
+                  alt="Trabajo PeluRock" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/dog-5.png" 
+                  alt="Trabajo PeluRock" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/dog-6.png" 
+                  alt="Trabajo PeluRock" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/dog-7.png" 
+                  alt="Trabajo PeluRock" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/dog-8.png" 
+                  alt="Trabajo PeluRock" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+            </div>
+
+            <div className="mt-16 text-center">
+              <a href="https://instagram.com/pelurocknataleal" target="_blank" rel="noopener noreferrer">
+                <button className="bg-zinc-900 border-2 border-secondary text-secondary px-10 py-5 text-sm font-bold tracking-widest uppercase rounded-md hover:bg-secondary/10 transition-all duration-300">
+                  Ver más en Instagram
+                </button>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 bg-gradient-to-b from-zinc-900 to-black" id="transformacion">
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <span className="text-secondary font-bold tracking-[0.3em] uppercase mb-4 block text-sm">Nuestra Historia</span>
+                <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
+                  De Peludogs Móvil a <span className="text-secondary">PeluRock</span>
+                </h2>
+                <p className="text-white/80 text-xl leading-relaxed mb-8">
+                  Nos transformamos para entregar una mejor experiencia: atención personalizada, espacio fijo y el mismo cariño de siempre para cada peludito.
+                </p>
+                <div className="bg-secondary/10 border-l-4 border-secondary p-6 rounded-lg mb-8">
+                  <p className="text-white font-bold text-lg">
+                    ¡Tenemos horas disponibles! Agenda directamente por WhatsApp y asegura tu cupo.
+                  </p>
+                </div>
+                <a href="https://wa.me/56935884173" target="_blank" rel="noopener noreferrer">
+                  <button className="bg-secondary text-black px-10 py-5 text-sm font-bold tracking-widest uppercase rounded-md hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/20 flex items-center gap-3">
+                    Reservar por WhatsApp
+                  </button>
+                </a>
+              </div>
+              <div className="relative">
+                <div className="absolute inset-0 bg-secondary/20 rounded-full blur-[100px]"></div>
+                <div className="relative bg-zinc-900 border-2 border-secondary/40 rounded-xl p-8 text-center">
+                  <h3 className="text-3xl font-bold text-secondary mb-4">Misma pasión, mejor espacio</h3>
+                  <p className="text-white/80 text-lg">
+                    Ahora en Portal San Pedro para atenderte con más comodidad y profesionalismo.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-40 bg-secondary-container/20 text-center">
+        <section className="py-24 bg-black" id="cursos">
+          <div className="max-w-4xl mx-auto px-8 text-center">
+            <div className="mb-12">
+              <span className="text-secondary font-bold tracking-[0.3em] uppercase mb-4 block text-sm">Formación Profesional</span>
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                ¿Quieres aprender peluquería canina?
+              </h2>
+              <div className="h-1 w-32 bg-secondary mx-auto mb-8"></div>
+              <p className="text-white/80 text-xl leading-relaxed mb-12">
+                Inscríbete en nuestros cursos de peluquería canina y aprende este hermoso oficio con profesionales experimentados.
+              </p>
+            </div>
+            <a href="https://wa.me/56947038938" target="_blank" rel="noopener noreferrer">
+              <button className="bg-tertiary text-white px-12 py-6 text-lg font-bold tracking-wider uppercase rounded-md hover:bg-tertiary/90 transition-all duration-300 shadow-lg shadow-tertiary/30 flex items-center gap-4 mx-auto">
+                Consultar por Cursos
+              </button>
+            </a>
+          </div>
+        </section>
+
+        <section className="py-24 bg-gradient-to-b from-zinc-900 to-black" id="contacto">
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Encuéntranos</h2>
+              <div className="h-1 w-32 bg-secondary mx-auto"></div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl text-center hover:border-secondary transition-all duration-300">
+                <h3 className="text-2xl font-bold text-secondary mb-4">Ubicación</h3>
+                <p className="text-white/90 text-lg">
+                  Portal San Pedro<br/>
+                  San Pedro de La Paz
+                </p>
+              </div>
+
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl text-center hover:border-secondary transition-all duration-300">
+                <h3 className="text-2xl font-bold text-secondary mb-4">Contacto</h3>
+                <div className="space-y-3">
+                  <a href="https://wa.me/56935884173" target="_blank" rel="noopener noreferrer" className="block text-white/90 hover:text-secondary transition-colors text-lg font-semibold">
+                    +56 9 3588 4173<br/>
+                    <span className="text-sm text-white/60">Reservas</span>
+                  </a>
+                  <a href="https://wa.me/56947038938" target="_blank" rel="noopener noreferrer" className="block text-white/90 hover:text-secondary transition-colors text-lg font-semibold">
+                    +56 9 4703 8938<br/>
+                    <span className="text-sm text-white/60">Cursos</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl text-center hover:border-secondary transition-all duration-300">
+                <h3 className="text-2xl font-bold text-secondary mb-4">Síguenos</h3>
+                <a href="https://instagram.com/pelurocknataleal" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-secondary transition-colors text-lg font-semibold">
+                  @pelurocknataleal
+                </a>
+              </div>
+
+            </div>
+
+            <div className="mt-16 text-center">
+              <div className="flex flex-col sm:flex-row justify-center gap-6">
+                <Link href="/reservar">
+                  <button className="bg-secondary text-black px-10 py-5 text-sm font-bold tracking-widest uppercase rounded-md hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/20">
+                    Reservar Hora
+                  </button>
+                </Link>
+                <a href="https://wa.me/56935884173" target="_blank" rel="noopener noreferrer">
+                  <button className="bg-zinc-900 border-2 border-secondary text-secondary px-10 py-5 text-sm font-bold tracking-widest uppercase rounded-md hover:bg-secondary/10 transition-all duration-300">
+                    Consultar Servicios
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-32 bg-gradient-to-br from-secondary via-tertiary to-secondary text-center">
           <div className="max-w-3xl mx-auto px-8">
-            <h2 className="text-5xl md:text-7xl font-headline text-primary mb-12">¿Listo para refinar su estética?</h2>
+            <h2 className="text-5xl md:text-7xl font-bold text-black mb-8">
+              ¿Listo para el cambio?
+            </h2>
+            <p className="text-black/80 text-xl mb-12 font-semibold">
+              Dale a tu peludito el estilo y cuidado que se merece
+            </p>
             <Link href="/reservar">
-              <button className="bg-secondary text-on-secondary px-12 py-6 text-sm font-label tracking-widest uppercase rounded-lg shadow-xl hover:opacity-90 transition-all scale-98">
+              <button className="bg-black text-secondary px-12 py-6 text-sm font-bold tracking-widest uppercase rounded-lg shadow-2xl hover:opacity-90 transition-all scale-98">
                 Reservar
               </button>
             </Link>
@@ -227,38 +390,45 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-zinc-900 dark:bg-black text-zinc-50 dark:text-zinc-300 w-full py-20 px-8">
+      <footer className="bg-black text-white w-full py-16 px-8 border-t-2 border-secondary/30">
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 max-w-7xl mx-auto">
           <div className="max-w-xs">
-            <div className="font-noto-serif text-xl text-zinc-50 uppercase mb-6">The Editorial Atelier</div>
-            <p className="font-manrope text-sm text-zinc-400 leading-relaxed mb-8">
-              Elevando el cabello a una forma de arte. Únase a nuestra comunidad para obtener información exclusiva sobre estilo y novedades del atelier.
+            <div className="flex items-center gap-3 mb-4">
+              <Image src="/images/logo.png" alt="PeluRock Nata Leal" width={50} height={50} className="object-contain" />
+              <span className="font-bold text-xl text-secondary uppercase">PeluRock Nata Leal</span>
+            </div>
+            <p className="text-white/70 text-sm leading-relaxed mb-6">
+              Peluquería y Spa Canino con actitud rockera. Portal San Pedro, San Pedro de La Paz.
             </p>
             <div className="flex gap-4">
-              <span className="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">public</span>
-              <span className="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">movie_filter</span>
-              <span className="material-symbols-outlined cursor-pointer hover:text-secondary-fixed transition-colors">photo_camera</span>
+              <a href="https://instagram.com/pelurocknataleal" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-secondary/80 transition-colors text-xl font-bold">
+                Instagram
+              </a>
+              <a href="https://wa.me/56935884173" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-secondary/80 transition-colors text-xl font-bold">
+                WhatsApp
+              </a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-16">
-            <div className="space-y-4">
-              <h4 className="font-manrope text-sm tracking-widest uppercase text-white mb-6">Navegación</h4>
-              <a className="block text-zinc-400 hover:text-zinc-50 transition-colors font-manrope text-sm uppercase tracking-widest" href="#">Acerca de</a>
-              <a className="block text-zinc-400 hover:text-zinc-50 transition-colors font-manrope text-sm uppercase tracking-widest" href="#">Diario</a>
-              <a className="block text-zinc-400 hover:text-zinc-50 transition-colors font-manrope text-sm uppercase tracking-widest" href="#">Sostenibilidad</a>
-              <a className="block text-zinc-400 hover:text-zinc-50 transition-colors font-manrope text-sm uppercase tracking-widest" href="#">Contacto</a>
+            <div className="space-y-3">
+              <h4 className="font-bold text-sm tracking-widest uppercase text-secondary mb-4">Navegación</h4>
+              <a className="block text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-wider" href="#servicios">Servicios</a>
+              <a className="block text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-wider" href="#trabajo">Nuestro Trabajo</a>
+              <a className="block text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-wider" href="#transformacion">Nosotros</a>
+              <a className="block text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-wider" href="#cursos">Cursos</a>
+              <a className="block text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-wider" href="#contacto">Contacto</a>
             </div>
-            <div className="space-y-4">
-              <h4 className="font-manrope text-sm tracking-widest uppercase text-white mb-6">Legal</h4>
-              <a className="block text-zinc-400 hover:text-zinc-50 transition-colors font-manrope text-sm uppercase tracking-widest" href="#">Política de Privacidad</a>
-              <a className="block text-zinc-400 hover:text-zinc-50 transition-colors font-manrope text-sm uppercase tracking-widest" href="#">Términos de Servicio</a>
-              <a className="block text-zinc-400 hover:text-zinc-50 transition-colors font-manrope text-sm uppercase tracking-widest" href="#">Carreras</a>
+            <div className="space-y-3">
+              <h4 className="font-bold text-sm tracking-widest uppercase text-secondary mb-4">Contacto</h4>
+              <a href="https://wa.me/56935884173" className="block text-white/70 hover:text-secondary transition-colors text-sm">+56 9 3588 4173</a>
+              <a href="https://wa.me/56947038938" className="block text-white/70 hover:text-secondary transition-colors text-sm">+56 9 4703 8938</a>
+              <a href="https://instagram.com/pelurocknataleal" className="block text-white/70 hover:text-secondary transition-colors text-sm">@pelurocknataleal</a>
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center gap-6">
-          <span className="font-manrope text-[10px] tracking-[0.2em] uppercase text-zinc-500">© 2024 The Editorial Atelier. Todos los derechos reservados.</span>
-          <span className="font-manrope text-[10px] tracking-[0.2em] uppercase text-zinc-500">Arte en cada hebra</span>
+        <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-secondary/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <span className="text-[10px] tracking-[0.2em] uppercase text-white/50">© 2026 PeluRock Nata Leal. Todos los derechos reservados.</span>
+          <span className="text-[10px] tracking-[0.2em] uppercase text-secondary">Rock + Amor por tu peludito</span>
         </div>
       </footer>
     </>
