@@ -13,7 +13,11 @@ export default function ReservarPage() {
   const [error, setError] = useState('')
   
   const [customerName, setCustomerName] = useState('')
+  const [customerEmail, setCustomerEmail] = useState('')
   const [customerPhone, setCustomerPhone] = useState('')
+  const [petName, setPetName] = useState('')
+  const [petBreed, setPetBreed] = useState('')
+  const [petAge, setPetAge] = useState('')
   const [bookingSuccess, setBookingSuccess] = useState(false)
 
   const handleCheckAvailability = async () => {
@@ -51,8 +55,13 @@ export default function ReservarPage() {
   }
 
   const handleBookAppointment = async () => {
-    if (!customerName.trim() || !customerPhone.trim()) {
-      setError('Por favor completa tu nombre y teléfono')
+    if (!customerName.trim() || !customerPhone.trim() || !customerEmail.trim()) {
+      setError('Por favor completa nombre, email y teléfono')
+      return
+    }
+
+    if (!petName.trim() || !petBreed.trim() || !petAge.trim()) {
+      setError('Por favor completa la información de tu mascota')
       return
     }
 
@@ -65,6 +74,9 @@ export default function ReservarPage() {
     setError('')
 
     try {
+      // Concatenar info de la mascota al nombre del cliente para que aparezca en el calendario
+      const fullCustomerName = `${customerName.trim()} | Mascota: ${petName.trim()} (${petBreed.trim()}, ${petAge.trim()})`
+      
       const response = await fetch('/api/book', {
         method: 'POST',
         headers: {
@@ -74,8 +86,9 @@ export default function ReservarPage() {
           service: selectedService,
           date: selectedDate,
           time: selectedSlot,
-          customerName,
+          customerName: fullCustomerName,
           customerPhone,
+          customerEmail,
         }),
       })
 
@@ -90,7 +103,11 @@ export default function ReservarPage() {
       setAvailableSlots([])
       setSelectedSlot('')
       setCustomerName('')
+      setCustomerEmail('')
       setCustomerPhone('')
+      setPetName('')
+      setPetBreed('')
+      setPetAge('')
 
       setTimeout(() => setBookingSuccess(false), 5000)
     } catch (err: any) {
@@ -282,9 +299,10 @@ export default function ReservarPage() {
                   <h3 style={{ color: '#d4af37', fontSize: '1.3rem', marginBottom: '1rem', fontWeight: 'bold' }}>
                     4. Completa tus Datos
                   </h3>
+                  
                   <div style={{ marginBottom: '1.5rem' }}>
                     <label style={{ display: 'block', marginBottom: '0.5rem', color: '#d4af37', fontWeight: '600' }}>
-                      Nombre completo
+                      Nombre completo *
                     </label>
                     <input
                       type="text"
@@ -307,7 +325,30 @@ export default function ReservarPage() {
 
                   <div style={{ marginBottom: '1.5rem' }}>
                     <label style={{ display: 'block', marginBottom: '0.5rem', color: '#d4af37', fontWeight: '600' }}>
-                      Teléfono
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      style={{ 
+                        width: '100%', 
+                        padding: '1rem', 
+                        fontSize: '1rem', 
+                        backgroundColor: '#0a0a0a', 
+                        color: '#fff', 
+                        border: '2px solid #d4af37', 
+                        borderRadius: '8px',
+                        outline: 'none'
+                      }}
+                      value={customerEmail}
+                      onChange={(e) => setCustomerEmail(e.target.value)}
+                      placeholder="tu@email.com"
+                      disabled={loading}
+                    />
+                  </div>
+
+                  <div style={{ marginBottom: '1.5rem' }}>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', color: '#d4af37', fontWeight: '600' }}>
+                      Teléfono *
                     </label>
                     <input
                       type="tel"
@@ -326,6 +367,81 @@ export default function ReservarPage() {
                       placeholder="+56 9 1234 5678"
                       disabled={loading}
                     />
+                  </div>
+
+                  <div style={{ backgroundColor: '#1a1a1a', padding: '1.5rem', borderRadius: '8px', marginBottom: '1.5rem', border: '2px solid #d4af37' }}>
+                    <h4 style={{ color: '#d4af37', marginBottom: '1rem', fontSize: '1.1rem', fontWeight: 'bold' }}>
+                      Información de tu Mascota
+                    </h4>
+                    
+                    <div style={{ marginBottom: '1rem' }}>
+                      <label style={{ display: 'block', marginBottom: '0.5rem', color: '#d4af37', fontWeight: '600' }}>
+                        Nombre del perrito *
+                      </label>
+                      <input
+                        type="text"
+                        style={{ 
+                          width: '100%', 
+                          padding: '1rem', 
+                          fontSize: '1rem', 
+                          backgroundColor: '#0a0a0a', 
+                          color: '#fff', 
+                          border: '2px solid #d4af37', 
+                          borderRadius: '8px',
+                          outline: 'none'
+                        }}
+                        value={petName}
+                        onChange={(e) => setPetName(e.target.value)}
+                        placeholder="Ej: Max"
+                        disabled={loading}
+                      />
+                    </div>
+
+                    <div style={{ marginBottom: '1rem' }}>
+                      <label style={{ display: 'block', marginBottom: '0.5rem', color: '#d4af37', fontWeight: '600' }}>
+                        Raza *
+                      </label>
+                      <input
+                        type="text"
+                        style={{ 
+                          width: '100%', 
+                          padding: '1rem', 
+                          fontSize: '1rem', 
+                          backgroundColor: '#0a0a0a', 
+                          color: '#fff', 
+                          border: '2px solid #d4af37', 
+                          borderRadius: '8px',
+                          outline: 'none'
+                        }}
+                        value={petBreed}
+                        onChange={(e) => setPetBreed(e.target.value)}
+                        placeholder="Ej: Golden Retriever"
+                        disabled={loading}
+                      />
+                    </div>
+
+                    <div>
+                      <label style={{ display: 'block', marginBottom: '0.5rem', color: '#d4af37', fontWeight: '600' }}>
+                        Edad *
+                      </label>
+                      <input
+                        type="text"
+                        style={{ 
+                          width: '100%', 
+                          padding: '1rem', 
+                          fontSize: '1rem', 
+                          backgroundColor: '#0a0a0a', 
+                          color: '#fff', 
+                          border: '2px solid #d4af37', 
+                          borderRadius: '8px',
+                          outline: 'none'
+                        }}
+                        value={petAge}
+                        onChange={(e) => setPetAge(e.target.value)}
+                        placeholder="Ej: 3 años"
+                        disabled={loading}
+                      />
+                    </div>
                   </div>
 
                   <div style={{ backgroundColor: '#0a0a0a', border: '2px solid #d4af37', padding: '1.5rem', borderRadius: '8px', marginBottom: '1.5rem' }}>
@@ -349,20 +465,20 @@ export default function ReservarPage() {
                       padding: '1.25rem', 
                       fontSize: '1.1rem', 
                       fontWeight: 'bold', 
-                      background: loading || !customerName.trim() || !customerPhone.trim() 
+                      background: loading || !customerName.trim() || !customerEmail.trim() || !customerPhone.trim() || !petName.trim() || !petBreed.trim() || !petAge.trim()
                         ? '#666' 
                         : 'linear-gradient(135deg, #d4af37 0%, #ff8c42 100%)', 
                       color: '#000', 
                       border: 'none', 
                       borderRadius: '8px', 
-                      cursor: loading || !customerName.trim() || !customerPhone.trim() ? 'not-allowed' : 'pointer',
+                      cursor: loading || !customerName.trim() || !customerEmail.trim() || !customerPhone.trim() || !petName.trim() || !petBreed.trim() || !petAge.trim() ? 'not-allowed' : 'pointer',
                       transition: 'all 0.3s',
                       textTransform: 'uppercase',
                       letterSpacing: '1px',
                       boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)'
                     }}
                     onClick={handleBookAppointment}
-                    disabled={loading || !customerName.trim() || !customerPhone.trim()}
+                    disabled={loading || !customerName.trim() || !customerEmail.trim() || !customerPhone.trim() || !petName.trim() || !petBreed.trim() || !petAge.trim()}
                   >
                     {loading ? 'Confirmando...' : 'Confirmar Reserva'}
                   </button>

@@ -1,24 +1,45 @@
 {
-  "name": "Barbería Elite",
+  "name": "PeluRock Nata Leal",
   "calendarId": "primary",
   "timezone": "America/Santiago",
   "workingHours": {
-    "monday": ["09:00", "18:00"],
-    "tuesday": ["09:00", "18:00"],
-    "wednesday": ["09:00", "18:00"],
-    "thursday": ["09:00", "18:00"],
-    "friday": ["09:00", "18:00"],
-    "saturday": ["10:00", "14:00"]
+    "monday": ["10:00", "18:00"],
+    "tuesday": ["10:00", "18:00"],
+    "wednesday": ["10:00", "18:00"],
+    "thursday": ["10:00", "18:00"],
+    "friday": ["10:00", "18:00"],
+    "saturday": ["10:00", "18:00"]
   },
   "services": [
     {
-      "name": "Corte",
-      "duration": 45
+      "name": "Rock Soft",
+      "duration": 120
     },
     {
-      "name": "Corte + Barba",
-      "duration": 60
+      "name": "Rock Cut",
+      "duration": 120
+    },
+    {
+      "name": "Rock Bath",
+      "duration": 120
+    },
+    {
+      "name": "Rock Fresh",
+      "duration": 120
+    },
+    {
+      "name": "Rock Turbo",
+      "duration": 120
+    },
+    {
+      "name": "Rock Smile",
+      "duration": 120
+    },
+    {
+      "name": "Rock Zen",
+      "duration": 120
     }
   ],
-  "slotInterval": 15
+  "slotInterval": 120
 }
+

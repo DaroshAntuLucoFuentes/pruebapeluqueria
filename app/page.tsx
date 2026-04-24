@@ -16,7 +16,7 @@ export default function Home() {
           <div className="hidden md:flex items-center space-x-8">
             <a className="text-zinc-300 hover:text-secondary transition-colors font-bold text-sm tracking-wide uppercase" href="#servicios">Servicios</a>
             <a className="text-zinc-300 hover:text-secondary transition-colors font-bold text-sm tracking-wide uppercase" href="#trabajo">Nuestro Trabajo</a>
-            <a className="text-zinc-300 hover:text-secondary transition-colors font-bold text-sm tracking-wide uppercase" href="#transformacion">Nosotros</a>
+            <a className="text-zinc-300 hover:text-secondary transition-colors font-bold text-sm tracking-wide uppercase" href="#pago">Pago</a>
             <a className="text-zinc-300 hover:text-secondary transition-colors font-bold text-sm tracking-wide uppercase" href="#cursos">Cursos</a>
             <a className="text-zinc-300 hover:text-secondary transition-colors font-bold text-sm tracking-wide uppercase" href="#contacto">Contacto</a>
           </div>
@@ -297,23 +297,155 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="py-24 bg-gradient-to-b from-zinc-900 to-black" id="pago">
+          <div className="max-w-5xl mx-auto px-8">
+            <div className="bg-gradient-to-br from-secondary/20 via-tertiary/20 to-secondary/20 border-4 border-secondary rounded-2xl p-8 md:p-12 shadow-2xl shadow-secondary/30">
+              <div className="text-center mb-8">
+                <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+                  Confirma tu Reserva con Pago
+                </h2>
+                <div className="h-1 w-32 bg-secondary mx-auto mb-6"></div>
+              </div>
+
+              <div className="bg-black/50 backdrop-blur-sm rounded-xl p-8 mb-8 border-2 border-secondary/30">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-black font-bold text-xl">
+                    1
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Realiza tu reserva</h3>
+                    <p className="text-white/80 leading-relaxed">
+                      Completa el formulario de reserva seleccionando el servicio, fecha y hora que prefieras.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-black font-bold text-xl">
+                    2
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Realiza el pago</h3>
+                    <p className="text-white/80 leading-relaxed mb-4">
+                      Para confirmar tu reserva, realiza el pago a través de Mercado Pago.
+                    </p>
+                    <a 
+                      href="https://mpago.la/2p2ixWw" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-block bg-gradient-to-r from-[#00b3e6] to-[#009ee3] text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-[#009ee3] hover:to-[#0089cc] transition-all duration-300 shadow-lg"
+                    >
+                      Pagar con Mercado Pago
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-black font-bold text-xl">
+                    3
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">Envía tu comprobante</h3>
+                    <p className="text-white/80 leading-relaxed mb-4">
+                      Una vez realizado el pago, envía el comprobante por WhatsApp para validar tu reserva.
+                    </p>
+                    <a 
+                      href="https://wa.me/56935884173" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-block bg-[#25D366] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#20BA5A] transition-all duration-300 shadow-lg"
+                    >
+                      Enviar Comprobante por WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-tertiary/20 border-2 border-tertiary/50 rounded-xl p-6 text-center">
+                <p className="text-white font-bold text-lg">
+                  Tu reserva será válida una vez que realices el pago y envíes el comprobante por WhatsApp.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-24 bg-black" id="cursos">
-          <div className="max-w-4xl mx-auto px-8 text-center">
-            <div className="mb-12">
+          <div className="max-w-7xl mx-auto px-8">
+            <div className="text-center mb-16">
               <span className="text-secondary font-bold tracking-[0.3em] uppercase mb-4 block text-sm">Formación Profesional</span>
               <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
                 ¿Quieres aprender peluquería canina?
               </h2>
               <div className="h-1 w-32 bg-secondary mx-auto mb-8"></div>
-              <p className="text-white/80 text-xl leading-relaxed mb-12">
-                Inscríbete en nuestros cursos de peluquería canina y aprende este hermoso oficio con profesionales experimentados.
+              <p className="text-white/80 text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
+                Inscríbete en nuestros cursos de peluquería canina y aprende este hermoso oficio con profesionales experimentados. Formamos groómers apasionados y capacitados.
               </p>
             </div>
-            <a href="https://wa.me/56947038938" target="_blank" rel="noopener noreferrer">
-              <button className="bg-tertiary text-white px-12 py-6 text-lg font-bold tracking-wider uppercase rounded-md hover:bg-tertiary/90 transition-all duration-300 shadow-lg shadow-tertiary/30 flex items-center gap-4 mx-auto">
-                Consultar por Cursos
-              </button>
-            </a>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/curso-1.png" 
+                  alt="Curso de Peluquería Canina" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/curso-2.png" 
+                  alt="Estudiantes de Peluquería Canina" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/curso-3.png" 
+                  alt="Graduación Curso Peluquería" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/curso-4.png" 
+                  alt="Egresados Certificados" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/curso-5.png" 
+                  alt="Práctica en Curso" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              
+              <div className="group relative overflow-hidden rounded-xl aspect-square bg-zinc-900 border-2 border-secondary/30 hover:border-secondary transition-all duration-300">
+                <Image 
+                  src="/images/curso-6.png" 
+                  alt="Testimonios Alumnos" 
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+            </div>
+
+            <div className="text-center">
+              <a href="https://wa.me/56947038938" target="_blank" rel="noopener noreferrer">
+                <button className="bg-tertiary text-white px-12 py-6 text-lg font-bold tracking-wider uppercase rounded-md hover:bg-tertiary/90 transition-all duration-300 shadow-lg shadow-tertiary/30 inline-flex items-center gap-4">
+                  Consultar por Cursos
+                </button>
+              </a>
+            </div>
           </div>
         </section>
 
@@ -414,7 +546,7 @@ export default function Home() {
               <h4 className="font-bold text-sm tracking-widest uppercase text-secondary mb-4">Navegación</h4>
               <a className="block text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-wider" href="#servicios">Servicios</a>
               <a className="block text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-wider" href="#trabajo">Nuestro Trabajo</a>
-              <a className="block text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-wider" href="#transformacion">Nosotros</a>
+              <a className="block text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-wider" href="#pago">Pago</a>
               <a className="block text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-wider" href="#cursos">Cursos</a>
               <a className="block text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-wider" href="#contacto">Contacto</a>
             </div>
