@@ -275,14 +275,14 @@ export default function Home() {
                 </p>
                 <div className="bg-secondary/10 border-l-4 border-secondary p-6 rounded-lg mb-8">
                   <p className="text-white font-bold text-lg">
-                    ¡Tenemos horas disponibles! Agenda directamente por WhatsApp y asegura tu cupo.
+                    ¡Tenemos horas disponibles! Agenda directamente y asegura tu cupo.
                   </p>
                 </div>
-                <a href="https://wa.me/56935884173" target="_blank" rel="noopener noreferrer">
+                <Link href="/reservar">
                   <button className="bg-secondary text-black px-10 py-5 text-sm font-bold tracking-widest uppercase rounded-md hover:bg-secondary/90 transition-all duration-300 shadow-lg shadow-secondary/20 flex items-center gap-3">
-                    Reservar por WhatsApp
+                    Reservar
                   </button>
-                </a>
+                </Link>
               </div>
               <div className="relative">
                 <div className="absolute inset-0 bg-secondary/20 rounded-full blur-[100px]"></div>
@@ -297,72 +297,72 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-24 bg-gradient-to-b from-zinc-900 to-black" id="pago">
-          <div className="max-w-5xl mx-auto px-8">
-            <div className="bg-gradient-to-br from-secondary/20 via-tertiary/20 to-secondary/20 border-4 border-secondary rounded-2xl p-8 md:p-12 shadow-2xl shadow-secondary/30">
-              <div className="text-center mb-8">
-                <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+        <section className="py-12 md:py-24 bg-gradient-to-b from-zinc-900 to-black" id="pago">
+          <div className="max-w-5xl mx-auto px-4 md:px-8">
+            <div className="bg-gradient-to-br from-secondary/20 via-tertiary/20 to-secondary/20 border-2 md:border-4 border-secondary rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12 shadow-2xl shadow-secondary/30">
+              <div className="text-center mb-6 md:mb-8">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-3 md:mb-4">
                   Confirma tu Reserva con Pago
                 </h2>
-                <div className="h-1 w-32 bg-secondary mx-auto mb-6"></div>
+                <div className="h-1 w-24 md:w-32 bg-secondary mx-auto mb-4 md:mb-6"></div>
               </div>
 
-              <div className="bg-black/50 backdrop-blur-sm rounded-xl p-8 mb-8 border-2 border-secondary/30">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-black font-bold text-xl">
+              <div className="bg-black/50 backdrop-blur-sm rounded-lg md:rounded-xl p-4 md:p-6 lg:p-8 mb-6 md:mb-8 border-2 border-secondary/30">
+                <div className="flex items-start gap-3 md:gap-4 mb-6">
+                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-secondary rounded-full flex items-center justify-center text-black font-bold text-lg md:text-xl">
                     1
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Realiza tu reserva</h3>
-                    <p className="text-white/80 leading-relaxed">
+                  <div className="flex-1">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2">Realiza tu reserva</h3>
+                    <p className="text-sm md:text-base text-white/80 leading-relaxed">
                       Completa el formulario de reserva seleccionando el servicio, fecha y hora que prefieras.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-black font-bold text-xl">
+                <div className="flex items-start gap-3 md:gap-4 mb-6">
+                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-secondary rounded-full flex items-center justify-center text-black font-bold text-lg md:text-xl">
                     2
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Realiza el pago</h3>
-                    <p className="text-white/80 leading-relaxed mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2">Realiza el pago</h3>
+                    <p className="text-sm md:text-base text-white/80 leading-relaxed mb-4">
                       Para confirmar tu reserva, realiza el pago a través de Mercado Pago.
                     </p>
                     <a 
                       href="https://mpago.la/2p2ixWw" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-block bg-gradient-to-r from-[#00b3e6] to-[#009ee3] text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-[#009ee3] hover:to-[#0089cc] transition-all duration-300 shadow-lg"
+                      className="inline-block w-full md:w-auto text-center bg-gradient-to-r from-[#00b3e6] to-[#009ee3] text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-base md:text-lg hover:from-[#009ee3] hover:to-[#0089cc] transition-all duration-300 shadow-lg"
                     >
                       Pagar con Mercado Pago
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-black font-bold text-xl">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-secondary rounded-full flex items-center justify-center text-black font-bold text-lg md:text-xl">
                     3
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Envía tu comprobante</h3>
-                    <p className="text-white/80 leading-relaxed mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2">Envía tu comprobante</h3>
+                    <p className="text-sm md:text-base text-white/80 leading-relaxed mb-4">
                       Una vez realizado el pago, envía el comprobante por WhatsApp para validar tu reserva.
                     </p>
                     <a 
                       href="https://wa.me/56935884173" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-block bg-[#25D366] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#20BA5A] transition-all duration-300 shadow-lg"
+                      className="inline-block w-full md:w-auto text-center bg-[#25D366] text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-base md:text-lg hover:bg-[#20BA5A] transition-all duration-300 shadow-lg"
                     >
-                      Enviar Comprobante por WhatsApp
+                      Enviar Comprobante
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-tertiary/20 border-2 border-tertiary/50 rounded-xl p-6 text-center">
-                <p className="text-white font-bold text-lg">
+              <div className="bg-tertiary/20 border-2 border-tertiary/50 rounded-lg md:rounded-xl p-4 md:p-6 text-center">
+                <p className="text-white font-bold text-sm md:text-base lg:text-lg leading-relaxed">
                   Tu reserva será válida una vez que realices el pago y envíes el comprobante por WhatsApp.
                 </p>
               </div>
