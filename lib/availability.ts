@@ -29,6 +29,11 @@ export function createDateTime(date: Date, timeStr: string): Date {
   const { hours, minutes } = parseTime(timeStr)
   const result = new Date(date)
   result.setHours(hours, minutes, 0, 0)
+  
+  // Ajuste de zona horaria: sumamos 4 horas para compensar la diferencia
+  // entre UTC y America/Santiago (UTC-4)
+  result.setHours(result.getHours() + 4)
+  
   return result
 }
 
