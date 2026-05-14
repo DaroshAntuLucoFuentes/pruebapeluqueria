@@ -10,7 +10,7 @@ export default function Home() {
       <header className="bg-black/90 backdrop-blur-md fixed top-0 w-full z-50 shadow-[0px_4px_20px_rgba(212,175,55,0.1)] border-b border-secondary/20">
         <nav className="flex justify-between items-center px-8 py-3 max-w-7xl mx-auto">
           <div className="flex items-center gap-3">
-            <Image src="/images/logo.png" alt="PeluRock Nata Leal" width={60} height={60} className="object-contain" />
+            <Image src="/images/logo.jpg" alt="PeluRock Nata Leal" width={60} height={60} className="object-contain" />
             <span className="text-xl font-bold tracking-tight text-secondary uppercase hidden sm:block">PeluRock</span>
           </div>
           <div className="hidden md:flex items-center space-x-8">
@@ -64,7 +64,7 @@ export default function Home() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-secondary/30 rounded-full blur-[80px]"></div>
                   <Image 
-                    src="/images/logo.png" 
+                    src="/images/logo.jpg" 
                     alt="PeluRock Nata Leal Logo" 
                     width={500} 
                     height={500} 
@@ -526,7 +526,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 max-w-7xl mx-auto">
           <div className="max-w-xs">
             <div className="flex items-center gap-3 mb-4">
-              <Image src="/images/logo.png" alt="PeluRock Nata Leal" width={50} height={50} className="object-contain" />
+              <Image src="/images/logo.jpg" alt="PeluRock Nata Leal" width={50} height={50} className="object-contain" />
               <span className="font-bold text-xl text-secondary uppercase">PeluRock Nata Leal</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-6">

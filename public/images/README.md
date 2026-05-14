@@ -6,7 +6,7 @@ Coloca aquí las fotos de la peluquería con los siguientes nombres sugeridos:
 - `pelurock-1.jpg` - Foto de un perro después del servicio
 - `pelurock-2.jpg` - Otra foto de transformación
 - `pelurock-3.jpg` - Foto del espacio o más perritos
-- `logo.png` - Logo de PeluRock si existe
+- `logo.jpg` - Logo de PeluRock si existe
 
 Las imágenes se pueden usar en el código con:
 ```jsx
