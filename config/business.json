@@ -38,6 +38,18 @@
     {
       "name": "Rock Zen",
       "duration": 120
+    },
+    {
+      "name": "RockMuda Control",
+      "duration": 120
+    },
+    {
+      "name": "RockStripping",
+      "duration": 120
+    },
+    {
+      "name": "Rock Ozone Spa",
+      "duration": 120
     }
   ],
   "slotInterval": 120

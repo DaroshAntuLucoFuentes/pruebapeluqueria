@@ -18,6 +18,7 @@ export default function ReservarPage() {
   const [petName, setPetName] = useState('')
   const [petBreed, setPetBreed] = useState('')
   const [petAge, setPetAge] = useState('')
+  const [petWeight, setPetWeight] = useState('')
   const [bookingSuccess, setBookingSuccess] = useState(false)
 
   const handleCheckAvailability = async () => {
@@ -60,8 +61,14 @@ export default function ReservarPage() {
       return
     }
 
-    if (!petName.trim() || !petBreed.trim() || !petAge.trim()) {
+    if (!petName.trim() || !petBreed.trim() || !petAge.trim() || !petWeight.trim()) {
       setError('Por favor completa la información de tu mascota')
+      return
+    }
+
+    const weight = parseFloat(petWeight.replace(',', '.'))
+    if (isNaN(weight) || weight <= 0) {
+      setError('Ingresa un peso aproximado válido en kilos')
       return
     }
 
@@ -75,7 +82,7 @@ export default function ReservarPage() {
 
     try {
       // Concatenar info de la mascota al nombre del cliente para que aparezca en el calendario
-      const fullCustomerName = `${customerName.trim()} | Mascota: ${petName.trim()} (${petBreed.trim()}, ${petAge.trim()})`
+      const fullCustomerName = `${customerName.trim()} | Mascota: ${petName.trim()} (${petBreed.trim()}, ${petAge.trim()}, ${weight} kg)`
       
       const response = await fetch('/api/book', {
         method: 'POST',
@@ -108,6 +115,7 @@ export default function ReservarPage() {
       setPetName('')
       setPetBreed('')
       setPetAge('')
+      setPetWeight('')
 
       setTimeout(() => setBookingSuccess(false), 5000)
     } catch (err: any) {
@@ -420,7 +428,7 @@ export default function ReservarPage() {
                       />
                     </div>
 
-                    <div>
+                    <div style={{ marginBottom: '1rem' }}>
                       <label style={{ display: 'block', marginBottom: '0.5rem', color: '#d4af37', fontWeight: '600' }}>
                         Edad *
                       </label>
@@ -439,6 +447,31 @@ export default function ReservarPage() {
                         value={petAge}
                         onChange={(e) => setPetAge(e.target.value)}
                         placeholder="Ej: 3 años"
+                        disabled={loading}
+                      />
+                    </div>
+
+                    <div>
+                      <label style={{ display: 'block', marginBottom: '0.5rem', color: '#d4af37', fontWeight: '600' }}>
+                        Peso aproximado (kg) *
+                      </label>
+                      <input
+                        type="number"
+                        min="0.1"
+                        step="0.1"
+                        style={{ 
+                          width: '100%', 
+                          padding: '1rem', 
+                          fontSize: '1rem', 
+                          backgroundColor: '#0a0a0a', 
+                          color: '#fff', 
+                          border: '2px solid #d4af37', 
+                          borderRadius: '8px',
+                          outline: 'none'
+                        }}
+                        value={petWeight}
+                        onChange={(e) => setPetWeight(e.target.value)}
+                        placeholder="Ej: 12"
                         disabled={loading}
                       />
                     </div>
@@ -465,20 +498,20 @@ export default function ReservarPage() {
                       padding: '1.25rem', 
                       fontSize: '1.1rem', 
                       fontWeight: 'bold', 
-                      background: loading || !customerName.trim() || !customerEmail.trim() || !customerPhone.trim() || !petName.trim() || !petBreed.trim() || !petAge.trim()
+                      background: loading || !customerName.trim() || !customerEmail.trim() || !customerPhone.trim() || !petName.trim() || !petBreed.trim() || !petAge.trim() || !petWeight.trim()
                         ? '#666' 
                         : 'linear-gradient(135deg, #d4af37 0%, #ff8c42 100%)', 
                       color: '#000', 
                       border: 'none', 
                       borderRadius: '8px', 
-                      cursor: loading || !customerName.trim() || !customerEmail.trim() || !customerPhone.trim() || !petName.trim() || !petBreed.trim() || !petAge.trim() ? 'not-allowed' : 'pointer',
+                      cursor: loading || !customerName.trim() || !customerEmail.trim() || !customerPhone.trim() || !petName.trim() || !petBreed.trim() || !petAge.trim() || !petWeight.trim() ? 'not-allowed' : 'pointer',
                       transition: 'all 0.3s',
                       textTransform: 'uppercase',
                       letterSpacing: '1px',
                       boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)'
                     }}
                     onClick={handleBookAppointment}
-                    disabled={loading || !customerName.trim() || !customerEmail.trim() || !customerPhone.trim() || !petName.trim() || !petBreed.trim() || !petAge.trim()}
+                    disabled={loading || !customerName.trim() || !customerEmail.trim() || !customerPhone.trim() || !petName.trim() || !petBreed.trim() || !petAge.trim() || !petWeight.trim()}
                   >
                     {loading ? 'Confirmando...' : 'Confirmar Reserva'}
                   </button>

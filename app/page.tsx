@@ -151,6 +151,33 @@ export default function Home() {
                 </p>
               </div>
 
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl hover:border-secondary transition-all duration-300 group cursor-pointer hover:shadow-xl hover:shadow-secondary/20">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold text-secondary">RockMuda Control</h3>
+                </div>
+                <p className="text-white/80 leading-relaxed mb-6">
+                  Servicio especializado que elimina el exceso de subpelo y pelo muerto, ayudando a reducir la muda, mejorar la ventilación de la piel y mantener un pelaje más sano, ligero y brillante.
+                </p>
+              </div>
+
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl hover:border-secondary transition-all duration-300 group cursor-pointer hover:shadow-xl hover:shadow-secondary/20">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold text-secondary">RockStripping</h3>
+                </div>
+                <p className="text-white/80 leading-relaxed mb-6">
+                  Técnica especializada para razas de pelo duro que elimina manualmente el pelo muerto, manteniendo la textura natural, el color y la salud del manto. Ideal para conservar la apariencia correcta de la raza y favorecer el crecimiento de un pelaje fuerte y sano.
+                </p>
+              </div>
+
+              <div className="bg-zinc-900 border-2 border-secondary/30 p-8 rounded-xl hover:border-secondary transition-all duration-300 group cursor-pointer hover:shadow-xl hover:shadow-secondary/20">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-3xl font-bold text-secondary">Rock Ozone Spa</h3>
+                </div>
+                <p className="text-white/80 leading-relaxed mb-6">
+                  Terapia de ozono enfocada en higiene profunda, bienestar de la piel y revitalización del pelaje. Ideal para perros con piel sensible, mal olor, exceso de muda o necesidad de hidratación y recuperación dérmica.
+                </p>
+              </div>
+
             </div>
 
             <div className="mt-16 bg-gradient-to-r from-zinc-900 to-black border-2 border-secondary/40 p-10 rounded-xl">
